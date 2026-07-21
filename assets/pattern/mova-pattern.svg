@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="120" viewBox="0 0 240 120">
+  <!-- Estampa MOVA: derivada do simbolo V/A - cheios e vazios em ritmo constante -->
+  <g fill="none" stroke="currentColor" stroke-linejoin="miter" stroke-linecap="butt">
+    <path d="M-30 90 L0 30 L30 90 L60 30 L90 90 L120 30 L150 90 L180 30 L210 90 L240 30 L270 90" stroke-width="6" opacity=".9"/>
+    <path d="M-30 106 L0 46 L30 106 L60 46 L90 106 L120 46 L150 106 L180 46 L210 106 L240 46 L270 106" stroke-width="2" opacity=".55"/>
+    <path d="M-30 74 L0 14 L30 74 L60 14 L90 74 L120 14 L150 74 L180 14 L210 74 L240 14 L270 74" stroke-width="2" opacity=".55"/>
+    <path d="M-30 122 L0 62 L30 122 L60 62 L90 122 L120 62 L150 122 L180 62 L210 122 L240 62 L270 122" stroke-width="10" opacity=".35"/>
+  </g>
+</svg>

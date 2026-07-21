@@ -1,0 +1,6 @@
+# Ambiente de preview (bucket S3 de testes) — bloqueado para buscadores.
+# Ao publicar no domínio definitivo, trocar por:
+#   User-agent: *
+#   Allow: /
+User-agent: *
+Disallow: /
