@@ -1,7 +1,4 @@
-/* =========================================================
-   MOVA Arquitetura — main.js
-   JavaScript puro. Sem dependências.
-   ========================================================= */
+/* MOVA Arquitetura */
 (function () {
   'use strict';
 
@@ -9,9 +6,7 @@
   var $  = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
-  /* ---------------------------------------------------------
-     SCROLL util — um único rAF alimenta todos os listeners
-     --------------------------------------------------------- */
+  // Scroll
   var scrollHandlers = [];
   var ticking = false;
 
@@ -30,9 +25,7 @@
     });
   }, { passive: true });
 
-  /* ---------------------------------------------------------
-     PRELOADER — contador até o load
-     --------------------------------------------------------- */
+  // Preloader
   (function preloader() {
     var loader = $('#loader');
     var count  = $('#loaderCount');
@@ -56,13 +49,10 @@
     document.body.classList.add('is-locked');
     if (document.readyState === 'complete') done();
     else window.addEventListener('load', done);
-    // rede lenta não pode travar o site
     setTimeout(done, 4500);
   })();
 
-  /* ---------------------------------------------------------
-     HEADER — fundo ao rolar + esconder ao descer
-     --------------------------------------------------------- */
+  // Header
   (function header() {
     var el = $('#header');
     if (!el) return;
@@ -75,9 +65,7 @@
     });
   })();
 
-  /* ---------------------------------------------------------
-     MENU MOBILE
-     --------------------------------------------------------- */
+  // Menu mobile
   (function menu() {
     var burger = $('#burger');
     var nav    = $('#nav');
@@ -103,9 +91,6 @@
     });
   })();
 
-  /* ---------------------------------------------------------
-     REVEAL ao entrar na viewport
-     --------------------------------------------------------- */
   (function reveal() {
     var items = $$('.reveal');
     if (!items.length) return;
@@ -119,7 +104,6 @@
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         var el = entry.target;
-        // escalona irmãos para dar cadência
         var siblings = el.parentElement ? $$('.reveal', el.parentElement) : [];
         var i = Math.max(0, siblings.indexOf(el));
         el.style.transitionDelay = Math.min(i * 90, 450) + 'ms';
@@ -131,9 +115,7 @@
     items.forEach(function (el) { io.observe(el); });
   })();
 
-  /* ---------------------------------------------------------
-     CONTADORES
-     --------------------------------------------------------- */
+  // Contadores
   (function counters() {
     var nums = $$('[data-count]');
     if (!nums.length) return;
@@ -164,9 +146,7 @@
     nums.forEach(function (el) { io.observe(el); });
   })();
 
-  /* ---------------------------------------------------------
-     ACCORDION de serviços
-     --------------------------------------------------------- */
+  // Accordion de serviços
   (function accordion() {
     var acc = $('#acc');
     if (!acc) return;
@@ -194,7 +174,6 @@
       });
     });
 
-    // recalcula em resize
     var t;
     window.addEventListener('resize', function () {
       clearTimeout(t);
@@ -205,9 +184,7 @@
     });
   })();
 
-  /* ---------------------------------------------------------
-     PARALLAX leve (só transform)
-     --------------------------------------------------------- */
+  // Parallax leve (só transform)
   (function parallax() {
     var els = $$('[data-parallax]');
     if (!els.length || reduced) return;
@@ -223,18 +200,14 @@
     });
   })();
 
-  /* ---------------------------------------------------------
-     BOTÃO WHATSAPP
-     --------------------------------------------------------- */
+  // Botão whatsapp
   (function whats() {
     var el = $('.whats');
     if (!el) return;
     onScroll(function (y) { el.classList.toggle('is-visible', y > 600); });
   })();
 
-  /* ---------------------------------------------------------
-     FORMULÁRIO
-     --------------------------------------------------------- */
+  // Formulário
   (function form() {
     var f   = $('#form');
     if (!f) return;
@@ -242,7 +215,6 @@
     var btn = $('#submit');
     var btnLabel = btn ? $('span', btn).textContent : '';
 
-    // máscara de telefone
     var tel = $('#telefone');
     if (tel) {
       tel.addEventListener('input', function () {
@@ -309,14 +281,7 @@
     });
   })();
 
-  /* ---------------------------------------------------------
-     TRILHA DO FORMULÁRIO
-
-     O navegador libera o áudio quando o play parte de um gesto do
-     usuário. O clique em "Iniciar projeto" / "Solicitar proposta" é
-     esse gesto, então a trilha entra ali com fade e acompanha o
-     preenchimento do formulário.
-     --------------------------------------------------------- */
+  // Trilha do formulário
   (function ambientAudio() {
     var audio = $('#ambient');
     var toggle = $('#soundToggle');
@@ -353,8 +318,6 @@
       toggle.setAttribute('aria-label', on ? 'Desativar música' : 'Ativar música');
     }
 
-    // 1. o clique no CTA é a liberação que o navegador exige:
-    //    o play precisa sair de dentro do próprio handler.
     var started = false;
 
     function begin() {
@@ -378,11 +341,9 @@
       el.addEventListener('click', begin);
     });
 
-    // 2. quem rola direto até o formulário também ouve
     form.addEventListener('input', begin);
     form.addEventListener('focusin', begin);
 
-    // 3. sai da seção de contato: silencia
     if ('IntersectionObserver' in window) {
       var section = $('#contato');
       if (section) {
@@ -395,7 +356,6 @@
       }
     }
 
-    // 4. controle manual — a preferência fica salva
     toggle.addEventListener('click', function () {
       muted = !muted;
       localStorage.setItem('mova:muted', muted ? '1' : '0');
@@ -410,16 +370,13 @@
       }
     });
 
-    // aba em segundo plano não fica tocando
     document.addEventListener('visibilitychange', function () {
       if (document.hidden && !audio.paused) audio.pause();
       else if (!document.hidden && started && !muted) audio.play().catch(function () {});
     });
   })();
 
-  /* ---------------------------------------------------------
-     ANO NO RODAPÉ
-     --------------------------------------------------------- */
+  // Ano no rodapé
   (function year() {
     var el = $('#year');
     if (el) el.textContent = new Date().getFullYear();

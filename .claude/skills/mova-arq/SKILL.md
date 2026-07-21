@@ -16,16 +16,30 @@ Os assets já foram extraídos e otimizados para `assets/`. **Não reprocessar**
 - **Backend só quando necessário** (envio de e-mail do formulário) e em **PHP puro**, na pasta `backend/`.
 - **Proibido commit com `Co-Authored-By: Claude`.** Já desligado em `.claude/settings.json` (`includeCoAuthoredBy: false`). Nunca reativar, nunca adicionar a linha manualmente.
 - **Não commitar sem o usuário pedir.**
-- Organização de pastas obrigatória:
+- Organização de pastas obrigatória (camadas em `src/`, `index.html` na raiz por exigência do S3):
 
 ```
-index.html
-assets/      imagens, logos (svg), fontes (woff2), pattern
-css/         style.css
-javascript/  main.js
-backend/     contato.php
-Smash/       identidade original (ignorada pelo git)
+index.html            entrada (precisa ficar na raiz)
+src/
+  assets/             img, logo (svg), fonts (woff2), music, pattern
+  styles/style.css
+  scripts/main.js
+  views/              partials .html (reservado)
+infra/                terraform (S3 + CloudFront)
+Smash/                identidade original (ignorada pelo git)
 ```
+
+- Referências no HTML sempre com prefixo `src/` (`src/styles/…`, `src/assets/…`).
+- Deploy do site (nunca subir `infra/`, `Smash/`, `.claude/`, `.git/`, `.md`):
+
+```
+aws s3 sync . s3://mova-test-deploy --region us-east-1 --delete \
+  --exclude "infra/*" --exclude ".git/*" --exclude ".claude/*" \
+  --exclude "Smash/*" --exclude ".gitignore" --exclude "*.md" \
+  --exclude ".DS_Store" --exclude "*/.DS_Store"
+```
+Depois invalidar o CloudFront: `aws cloudfront create-invalidation --distribution-id E3LW4WG2LDZ07E --paths "/*"`.
+Preview no ar: https://d1sn7bnd5p5iv7.cloudfront.net
 
 - Git remoto: `git@github.com:AdrianoAngioletto/moova-arquitetura.git`, branch `main`.
 

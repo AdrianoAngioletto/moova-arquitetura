@@ -1,9 +1,4 @@
-/* =========================================================
-   MOVA Arquitetura — style.css
-   Identidade: Smash/ (paleta, Ranade + Chillax, símbolo V/Λ)
-   ========================================================= */
-
-/* ---------- FONTES ---------- */
+/* Fontes */
 @font-face{font-family:'Ranade';src:url('../assets/fonts/Ranade-Light.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:'Ranade';src:url('../assets/fonts/Ranade-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:'Ranade';src:url('../assets/fonts/Ranade-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
@@ -14,7 +9,7 @@
 @font-face{font-family:'Chillax';src:url('../assets/fonts/Chillax-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
 @font-face{font-family:'Chillax';src:url('../assets/fonts/Chillax-Semibold.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
 
-/* ---------- TOKENS ---------- */
+/* Tokens */
 :root{
   /* paleta oficial */
   --terracota:#8C421F;
@@ -43,7 +38,7 @@
   --bd-dark:rgba(65,65,67,.16);
 }
 
-/* ---------- BASE ---------- */
+/* Base */
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
@@ -67,7 +62,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
 .grid-2{display:grid;grid-template-columns:1fr;gap:clamp(40px,6vw,88px);align-items:start}
 @media(min-width:900px){.grid-2{grid-template-columns:1fr 1fr}}
 
-/* ---------- TIPOGRAFIA ---------- */
+/* Tipografia */
 .eyebrow{
   font-family:var(--ff-text);font-size:.72rem;font-weight:500;
   text-transform:uppercase;letter-spacing:.2em;color:var(--siena);
@@ -94,7 +89,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
 }
 .sec-head__lead{color:rgba(244,240,234,.55);max-width:44ch;padding-bottom:.6em}
 
-/* ---------- BOTÕES ---------- */
+/* Botões */
 .btn{
   --c:var(--marfim);
   display:inline-flex;align-items:center;gap:14px;
@@ -116,9 +111,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
 .btn--solid::before{background:var(--marfim)}
 .btn--solid:hover{color:var(--preto);border-color:var(--marfim)}
 
-/* =========================================================
-   PRELOADER
-   ========================================================= */
+/* Preloader */
 .loader{
   position:fixed;inset:0;z-index:200;background:var(--preto);
   display:grid;place-items:center;
@@ -138,9 +131,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
   color:rgba(244,240,234,.16);line-height:1;
 }
 
-/* =========================================================
-   HEADER
-   ========================================================= */
+/* Header */
 .header{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;gap:24px;
@@ -230,9 +221,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
   }
 }
 
-/* =========================================================
-   HERO
-   ========================================================= */
+/* Hero */
 .hero{
   position:relative;min-height:100svh;display:flex;align-items:flex-end;
   padding:140px var(--gut) clamp(48px,7vw,90px);overflow:hidden;
@@ -293,9 +282,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
 @keyframes slide{50%{transform:translateX(0)}100%{transform:translateX(100%)}}
 @media(max-width:999px){.hero__scroll{display:none}}
 
-/* =========================================================
-   MARQUEE
-   ========================================================= */
+/* Marquee */
 .marquee{
   overflow:hidden;border-block:1px solid var(--bd);
   padding-block:clamp(16px,2vw,24px);background:var(--carvao);
@@ -313,9 +300,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
 .marquee i{color:var(--siena);font-size:.6rem;font-style:normal}
 @keyframes scroll{to{transform:translateX(-50%)}}
 
-/* =========================================================
-   ESTÚDIO
-   ========================================================= */
+/* Estúdio */
 .studio{background:var(--preto)}
 .studio__media{position:relative;aspect-ratio:4/5;overflow:hidden}
 .studio__media img{
@@ -341,9 +326,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
   letter-spacing:.05em;color:rgba(244,240,234,.5);
 }
 
-/* =========================================================
-   PILARES
-   ========================================================= */
+/* Pilares */
 .pillars{background:var(--carvao)}
 .pillars__grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -370,9 +353,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
 }
 .pillar p{font-size:.9rem;line-height:1.65;color:rgba(244,240,234,.55)}
 
-/* =========================================================
-   SERVIÇOS — accordion
-   ========================================================= */
+/* Serviços */
 .services{background:var(--preto)}
 .acc{border-top:1px solid var(--bd)}
 .acc__head{
@@ -421,9 +402,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
   content:'';position:absolute;left:0;top:.72em;width:9px;height:1px;background:var(--siena);
 }
 
-/* =========================================================
-   MANIFESTO
-   ========================================================= */
+/* Manifesto */
 .manifesto{
   position:relative;overflow:hidden;
   padding-block:clamp(100px,14vw,200px);
@@ -447,9 +426,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
   text-transform:uppercase;letter-spacing:.28em;color:rgba(244,240,234,.42);
 }
 
-/* =========================================================
-   MÉTODO
-   ========================================================= */
+/* Método */
 .method{background:var(--carvao)}
 .steps{display:grid;gap:0;counter-reset:s}
 .step{
@@ -472,9 +449,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
 }
 .step p{color:rgba(244,240,234,.55);max-width:56ch}
 
-/* =========================================================
-   PROJETOS
-   ========================================================= */
+/* Projetos */
 .projects{background:var(--preto)}
 .gal{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(10px,1.2vw,18px)}
 @media(min-width:900px){.gal{grid-template-columns:repeat(4,1fr)}}
@@ -509,9 +484,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
   font-size:clamp(1rem,1.6vw,1.3rem);letter-spacing:-.015em;
 }
 
-/* =========================================================
-   SÓCIAS
-   ========================================================= */
+/* Sócias */
 .partners{background:var(--carvao)}
 .partners__grid{display:grid;gap:clamp(32px,4vw,56px)}
 @media(min-width:820px){.partners__grid{grid-template-columns:1fr 1fr}}
@@ -533,9 +506,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
 .partner p{color:rgba(244,240,234,.55);max-width:46ch;font-size:.92rem}
 .partner .link{display:inline-block;margin-top:18px;font-size:.9rem}
 
-/* =========================================================
-   CONTATO + FORM
-   ========================================================= */
+/* Contato + Form */
 .contact{background:var(--preto);position:relative;overflow:hidden}
 .contact__pattern{
   position:absolute;inset:0;z-index:0;color:var(--siena);opacity:.045;
@@ -592,9 +563,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .form.is-sending{opacity:.55;pointer-events:none}
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* Footer */
 .footer{background:var(--carvao);border-top:1px solid var(--bd);padding-top:clamp(56px,7vw,96px)}
 .footer__top{
   display:grid;gap:32px;align-items:center;
@@ -639,9 +608,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
 .whats:hover{background:var(--salvia);color:var(--preto)}
 .whats svg{width:26px;height:26px;fill:currentColor}
 
-/* =========================================================
-   CONTROLE DE SOM
-   ========================================================= */
+/* Controle De Som */
 .sound{
   position:fixed;right:clamp(16px,2.4vw,28px);
   bottom:calc(clamp(16px,2.4vw,28px) + 64px);z-index:90;
@@ -662,7 +629,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
   display:block;width:2px;height:100%;background:var(--siena);
   transform-origin:bottom;transform:scaleY(.25);
 }
-/* barras animadas só enquanto o som está ligado */
+
 .sound[aria-pressed="true"] .sound__bars i{animation:eq .9s ease-in-out infinite}
 .sound[aria-pressed="true"] .sound__bars i:nth-child(2){animation-delay:.15s}
 .sound[aria-pressed="true"] .sound__bars i:nth-child(3){animation-delay:.3s}
@@ -674,9 +641,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
   .sound{padding:12px;border-radius:50%}
 }
 
-/* =========================================================
-   REVEAL
-   ========================================================= */
+/* Reveal */
 .reveal{opacity:0;transform:translateY(34px);
   transition:opacity .9s var(--ease),transform 1s var(--slow)}
 .reveal.is-in{opacity:1;transform:none}

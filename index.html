@@ -6,23 +6,22 @@
 <title>MOVA Arquitetura — Projetar. Executar. Mover.</title>
 <meta name="description" content="Arquitetura corporativa de alto padrão. Projeto, execução turnkey, gerenciamento e manutenção em um fluxo único. Precisão técnica e sofisticação estética.">
 <meta name="theme-color" content="#0E0E0F">
-<!-- PREVIEW: remover esta linha quando o site for para o domínio definitivo -->
 <meta name="robots" content="noindex, nofollow">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="MOVA Arquitetura — Projetar. Executar. Mover.">
 <meta property="og:description" content="Arquitetura corporativa de alto padrão. Projeto, execução, gerenciamento e manutenção em um fluxo único.">
-<meta property="og:image" content="assets/img/parede-sombra.jpg">
+<meta property="og:image" content="src/assets/img/parede-sombra.jpg">
 <meta property="og:locale" content="pt_BR">
 
-<link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="assets/fonts/Ranade-Light.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/Chillax-Light.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="src/assets/logo/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="src/assets/fonts/Ranade-Light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="src/assets/fonts/Chillax-Light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="src/styles/style.css">
 </head>
 <body>
 
-<!-- ============ PRELOADER ============ -->
+<!-- Preloader -->
 <div class="loader" id="loader" aria-hidden="true">
   <div class="loader__mark">
     <svg viewBox="0 0 662 522" aria-hidden="true">
@@ -32,7 +31,7 @@
   <span class="loader__count" id="loaderCount">0</span>
 </div>
 
-<!-- ============ HEADER ============ -->
+<!-- Header -->
 <header class="header" id="header">
   <a class="header__logo" href="#top" aria-label="MOVA Arquitetura — início">
     <svg class="logo-h" role="img" aria-label="MOVA Arquitetura" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1017" height="250" viewBox="0 0 1017 250"> <defs> <clipPath id="logo-h-c1"> <path transform="matrix(1,0,0,-1,-241,875)" d="M241 625H1258V875H241Z" clip-rule="evenodd"/> </clipPath> <clipPath id="logo-h-c2"> <path transform="matrix(1,0,0,-1,-241,875)" d="M0 1500H1500V0H0Z"/> </clipPath> </defs> <g clip-path="url(#logo-h-c1)"> <g> <g clip-path="url(#logo-h-c2)"> <path transform="matrix(1,0,0,-1,554.6067,184.76679)" d="M0 0 51.675 119.536H37.059L-8.769 13.327H-25.367L-71.193 119.536H-85.809L-34.228 0ZM300.859 49.351H275.371L271.069 39.378H263.861C269.732 52.965 275.612 66.553 281.447 80.153H294.781L312.365 39.378H305.13ZM290.428 73.536H285.798L278.226 55.965H297.977ZM367.702 55.412H338.911V39.407H332.273V80.212H367.702C371.106 80.212 374.205 78.819 376.444 76.572 378.68 74.327 380.071 71.228 380.071 67.811 380.071 65.8 379.578 63.889 378.711 62.2 378.042 60.894 377.141 59.717 376.069 58.727 377.141 57.744 378.04 56.574 378.708 55.277 379.578 53.591 380.071 51.68 380.071 49.665V39.407H373.436V49.665C373.436 51.257 372.791 52.696 371.755 53.734 370.725 54.769 369.287 55.412 367.702 55.412M371.753 71.908C370.72 72.948 369.287 73.598 367.702 73.598H338.911V62.028H367.702C369.287 62.028 370.72 62.675 371.753 63.715 372.791 64.762 373.436 66.214 373.436 67.811 373.436 69.409 372.791 70.864 371.753 71.908M447.363 75.974C452.04 72.319 454.393 66.892 454.393 59.72 454.393 53.654 452.682 48.833 449.294 45.287 446.909 42.783 443.699 40.936 439.685 39.753L450.447 37.35 448.727 30.87 420.619 38.456C413.751 39.254 408.532 41.43 405.007 44.974 401.44 48.553 399.635 53.477 399.635 59.72 399.635 66.887 401.993 72.318 406.673 75.972 411.264 79.558 418.061 81.367 427.018 81.367 435.981 81.367 442.774 79.56 447.363 75.974M409.416 69.701C406.652 66.785 406.132 62.99 406.132 59.72 406.132 56.449 406.652 52.652 409.416 49.736 412.257 46.746 417.503 44.567 427.018 44.567 436.558 44.567 441.815 46.746 444.654 49.736 447.423 52.652 447.939 56.451 447.939 59.72 447.939 62.988 447.423 66.785 444.654 69.701 441.815 72.694 436.558 74.87 427.018 74.87 417.503 74.87 412.254 72.694 409.416 69.701M-532.219 106.365H-522.88L-470.924-.191H-460.456-450.087L-398.127 106.365H-388.699V-.092H-375.306V119.691H-406.423L-458.383 13.141H-460.456-462.534L-514.583 119.691H-545.607V-.092H-532.219ZM-255.83-3.993C-201.706-3.993-174.266 17.414-174.266 59.565-174.266 101.838-201.706 123.277-255.83 123.277-309.957 123.277-337.397 101.838-337.397 59.565-337.397 17.414-309.957-3.993-255.83-3.993M-255.83 110.327C-194.256 110.327-187.089 81.379-187.089 59.565-187.089 37.781-194.256 8.833-255.83 8.833-317.407 8.833-324.571 37.781-324.571 59.565-324.571 81.379-317.407 110.327-255.83 110.327M-126.88 176.397H-133.198V-56.864H-126.88ZM103.35 119.534 51.675-.003H66.292L112.12 106.207H128.718L174.544-.003H189.163L137.579 119.534Z" fill="currentColor"/> </g> </g> </g> </svg>
@@ -62,10 +61,10 @@
 
 <main id="top">
 
-<!-- ============ HERO ============ -->
+<!-- Hero -->
 <section class="hero">
   <div class="hero__bg" data-parallax="0.18">
-    <img src="assets/img/parede-sombra.jpg" alt="" aria-hidden="true" fetchpriority="high">
+    <img src="src/assets/img/parede-sombra.jpg" alt="" aria-hidden="true" fetchpriority="high">
   </div>
   <div class="hero__pattern" aria-hidden="true"></div>
   <div class="hero__mark" data-parallax="0.35" aria-hidden="true">
@@ -94,7 +93,7 @@
   </div>
 </section>
 
-<!-- ============ MARQUEE ============ -->
+<!-- Marquee -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee__track">
     <span>Precisão técnica</span><i>◆</i>
@@ -112,11 +111,11 @@
   </div>
 </div>
 
-<!-- ============ ESTÚDIO ============ -->
+<!-- Estúdio -->
 <section class="section studio" id="estudio">
   <div class="wrap grid-2">
     <div class="studio__media reveal">
-      <img src="assets/img/ambiente-vaso.jpg" alt="Detalhe de ambiente projetado pela MOVA Arquitetura" loading="lazy">
+      <img src="src/assets/img/ambiente-vaso.jpg" alt="Detalhe de ambiente projetado pela MOVA Arquitetura" loading="lazy">
       <div class="studio__badge">
         <svg class="badge-sym" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="666" height="526" viewBox="0 0 666 526"> <defs> <clipPath id="badge-sym-c1"> <path transform="matrix(1,0,0,-1,-417,1013)" d="M417 487H1083V1013H417Z" clip-rule="evenodd"/> </clipPath> <clipPath id="badge-sym-c2"> <path transform="matrix(1,0,0,-1,-417,1013)" d="M0 1500H1500V0H0Z"/> </clipPath> </defs> <g clip-path="url(#badge-sym-c1)"> <g> <g clip-path="url(#badge-sym-c2)"> <path transform="matrix(1,0,0,-1,242.8175,517.72268)" d="M0 0C68.166 157.675 136.289 315.227 204.358 472.978H249.773L375.182 182.334H415.182L274.023 509.445H180.357L-23.987 36.467H-69.417L-194.819 327.111H-234.818L-93.667 0Z" fill="currentColor"/> </g> </g> </g> </svg>
       </div>
@@ -140,7 +139,7 @@
   </div>
 </section>
 
-<!-- ============ PILARES ============ -->
+<!-- Pilares -->
 <section class="section pillars" id="pilares">
   <div class="wrap">
     <header class="sec-head">
@@ -183,7 +182,7 @@
   </div>
 </section>
 
-<!-- ============ SERVIÇOS ============ -->
+<!-- Serviços -->
 <section class="section services" id="servicos">
   <div class="wrap">
     <header class="sec-head sec-head--split">
@@ -258,10 +257,10 @@
   </div>
 </section>
 
-<!-- ============ MANIFESTO ============ -->
+<!-- Manifesto -->
 <section class="manifesto">
   <div class="manifesto__bg" data-parallax="0.12" aria-hidden="true">
-    <img src="assets/img/piso-granilite.jpg" alt="" loading="lazy">
+    <img src="src/assets/img/piso-granilite.jpg" alt="" loading="lazy">
   </div>
   <div class="wrap">
     <p class="eyebrow reveal">Manifesto</p>
@@ -272,7 +271,7 @@
   </div>
 </section>
 
-<!-- ============ MÉTODO ============ -->
+<!-- Método -->
 <section class="section method" id="metodo">
   <div class="wrap">
     <header class="sec-head">
@@ -305,7 +304,7 @@
   </div>
 </section>
 
-<!-- ============ PROJETOS ============ -->
+<!-- Projetos -->
 <section class="section projects" id="projetos">
   <div class="wrap">
     <header class="sec-head sec-head--split">
@@ -318,38 +317,38 @@
 
     <div class="gal">
       <figure class="gal__item gal__item--tall reveal">
-        <img src="assets/img/colunas-escala.jpg" alt="Escala e ritmo estrutural em espaço corporativo" loading="lazy">
+        <img src="src/assets/img/colunas-escala.jpg" alt="Escala e ritmo estrutural em espaço corporativo" loading="lazy">
         <figcaption><span>Corporativo</span><b>Ritmo e escala</b></figcaption>
       </figure>
       <figure class="gal__item reveal">
-        <img src="assets/img/poltrona.jpg" alt="Mobiliário e curvas em área de convivência" loading="lazy">
+        <img src="src/assets/img/poltrona.jpg" alt="Mobiliário e curvas em área de convivência" loading="lazy">
         <figcaption><span>Convivência</span><b>Conforto e forma</b></figcaption>
       </figure>
       <figure class="gal__item reveal">
-        <img src="assets/img/sombras-piso.jpg" alt="Estudo de luz e sombra sobre o piso" loading="lazy">
+        <img src="src/assets/img/sombras-piso.jpg" alt="Estudo de luz e sombra sobre o piso" loading="lazy">
         <figcaption><span>Luz</span><b>Desenho de sombra</b></figcaption>
       </figure>
       <figure class="gal__item gal__item--wide reveal">
-        <img src="assets/img/detalhe-palhinha.jpg" alt="Detalhe de materiais naturais e madeira" loading="lazy">
+        <img src="src/assets/img/detalhe-palhinha.jpg" alt="Detalhe de materiais naturais e madeira" loading="lazy">
         <figcaption><span>Materiais</span><b>Textura e toque</b></figcaption>
       </figure>
       <figure class="gal__item reveal">
-        <img src="assets/img/geometria-escada.jpg" alt="Geometria de escada em ambiente escuro" loading="lazy">
+        <img src="src/assets/img/geometria-escada.jpg" alt="Geometria de escada em ambiente escuro" loading="lazy">
         <figcaption><span>Circulação</span><b>Geometria precisa</b></figcaption>
       </figure>
       <figure class="gal__item reveal">
-        <img src="assets/img/arcos-luz.jpg" alt="Composição arquitetônica em preto e branco" loading="lazy">
+        <img src="src/assets/img/arcos-luz.jpg" alt="Composição arquitetônica em preto e branco" loading="lazy">
         <figcaption><span>Composição</span><b>Cheios e vazios</b></figcaption>
       </figure>
       <figure class="gal__item gal__item--wide reveal">
-        <img src="assets/img/colunas-ritmo.jpg" alt="Sequência de pilares em fachada" loading="lazy">
+        <img src="src/assets/img/colunas-ritmo.jpg" alt="Sequência de pilares em fachada" loading="lazy">
         <figcaption><span>Fachada</span><b>Repetição construtiva</b></figcaption>
       </figure>
     </div>
   </div>
 </section>
 
-<!-- ============ SÓCIAS ============ -->
+<!-- Sócias -->
 <section class="section partners" id="socias">
   <div class="wrap">
     <header class="sec-head">
@@ -359,7 +358,7 @@
 
     <div class="partners__grid">
       <article class="partner reveal">
-        <div class="partner__img"><img src="assets/img/louca-sombra.jpg" alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="partner__img"><img src="src/assets/img/louca-sombra.jpg" alt="" loading="lazy" aria-hidden="true"></div>
         <div class="partner__info">
           <h3>Anne Vasconcelos</h3>
           <p class="partner__role">Arquiteta · CAU A1739921</p>
@@ -369,7 +368,7 @@
       </article>
 
       <article class="partner reveal">
-        <div class="partner__img"><img src="assets/img/textura-curva.jpg" alt="" loading="lazy" aria-hidden="true"></div>
+        <div class="partner__img"><img src="src/assets/img/textura-curva.jpg" alt="" loading="lazy" aria-hidden="true"></div>
         <div class="partner__info">
           <h3>Fernanda Mota</h3>
           <p class="partner__role">Arquiteta · Gestão e obra</p>
@@ -381,7 +380,7 @@
   </div>
 </section>
 
-<!-- ============ CONTATO ============ -->
+<!-- Contato -->
 <section class="section contact" id="contato">
   <div class="contact__pattern" aria-hidden="true"></div>
   <div class="wrap grid-2">
@@ -439,7 +438,6 @@
         <label for="mensagem">Conte sobre o projeto</label>
       </div>
 
-      <!-- honeypot anti-spam -->
       <div class="hp" aria-hidden="true">
         <label for="website">Não preencha</label>
         <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
@@ -457,7 +455,7 @@
 
 </main>
 
-<!-- ============ FOOTER ============ -->
+<!-- Footer -->
 <footer class="footer">
   <div class="wrap">
     <div class="footer__top">
@@ -499,10 +497,9 @@
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1-1.4-1-2.6s.6-1.8.9-2.1c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1.9 2 1.2 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.2.3-.2.6-.1l2 .9c.3.1.4.2.5.3.1.2.1.6-.1 1.2Z"/></svg>
 </a>
 
-<!-- Trilha ambiente do formulário. preload="none": só baixa se o visitante interagir. -->
 <audio id="ambient" loop preload="none">
-  <source src="assets/music/vogue.m4a" type="audio/mp4">
-  <source src="assets/music/vogue.mp3" type="audio/mpeg">
+  <source src="src/assets/music/vogue.m4a" type="audio/mp4">
+  <source src="src/assets/music/vogue.mp3" type="audio/mpeg">
 </audio>
 
 <button class="sound" id="soundToggle" aria-pressed="false" aria-label="Desativar música" hidden>
@@ -510,6 +507,6 @@
   <span class="sound__label">Som</span>
 </button>
 
-<script src="javascript/main.js" defer></script>
+<script src="src/scripts/main.js" defer></script>
 </body>
 </html>
