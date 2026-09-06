@@ -1,0 +1,24 @@
+# Identidade visual bruta (fonte da verdade, fica fora do repo por peso)
+Smash/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+
+# Claude
+.claude/settings.local.json
+
+# Backend
+backend/config.local.php
+backend/*.log
+
+# Terraform
+infra/.terraform/
+infra/*.tfstate
+infra/*.tfstate.*
+infra/tfplan
+infra/crash.log

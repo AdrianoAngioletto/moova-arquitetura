@@ -87,6 +87,17 @@ python3 -m http.server 5173
 
 Ou qualquer servidor estático de sua preferência (`npx serve`, extensão Live Server, etc.).
 
+### Com Docker
+
+```bash
+docker compose up
+# http://localhost:8080
+```
+
+O container roda em `php:8.3-apache` servindo a raiz do projeto (a pasta é montada como
+volume, então qualquer edição nos arquivos aparece direto no navegador, sem rebuild). O PHP
+já vem pronto para quando o `backend/contato.php` do formulário de contato for implementado.
+
 ## Infraestrutura
 
 Toda a hospedagem é descrita em código, em `infra/`. O site vive em um bucket S3 **privado**,
