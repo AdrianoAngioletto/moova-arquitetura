@@ -91,6 +91,35 @@
     });
   })();
 
+  // Slideshow do hero
+  (function heroSlides() {
+    var slides = $$('.hero__slide', $('#heroBg'));
+    if (slides.length < 2) return;
+
+    var hero  = $('.hero');
+    var title = $('#heroTitle');
+    var desc  = $('#heroDesc');
+    var current = 0;
+
+    setInterval(function () {
+      slides[current].classList.remove('is-active');
+      current = (current + 1) % slides.length;
+      var next = slides[current];
+      next.classList.add('is-active');
+
+      if (title) title.classList.add('is-swapping');
+      if (desc)  desc.classList.add('is-swapping');
+
+      setTimeout(function () {
+        if (title && next.dataset.title) title.textContent = next.dataset.title;
+        if (desc  && next.dataset.desc)  desc.textContent  = next.dataset.desc;
+        if (title) title.classList.remove('is-swapping');
+        if (desc)  desc.classList.remove('is-swapping');
+        if (hero)  hero.classList.toggle('is-align-right', next.dataset.align === 'right');
+      }, 450);
+    }, 6000);
+  })();
+
   (function reveal() {
     var items = $$('.reveal');
     if (!items.length) return;

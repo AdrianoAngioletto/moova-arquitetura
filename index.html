@@ -39,12 +39,13 @@
 
   <nav class="nav" id="nav" aria-label="Navegação principal">
     <ul class="nav__list">
-      <li><a href="#estudio"><span class="nav__idx">01</span> Estúdio</a></li>
-      <li><a href="#servicos"><span class="nav__idx">02</span> Serviços</a></li>
-      <li><a href="#metodo"><span class="nav__idx">03</span> Método</a></li>
-      <li><a href="#projetos"><span class="nav__idx">04</span> Projetos</a></li>
-      <li><a href="#socias"><span class="nav__idx">05</span> Sócias</a></li>
-      <li><a href="#contato"><span class="nav__idx">06</span> Contato</a></li>
+      <li><a href="#top">Home</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#equipe">Equipe</a></li>
+      <li><a href="#contato">Contato</a></li>
     </ul>
     <div class="nav__foot">
       <a href="https://instagram.com/mo.voarq" target="_blank" rel="noopener">@mo.voarq</a>
@@ -63,8 +64,17 @@
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero__bg" data-parallax="0.18">
-    <img src="src/assets/img/parede-sombra.jpg" alt="" aria-hidden="true" fetchpriority="high">
+  <div class="hero__bg" id="heroBg" data-parallax="0.18">
+    <img class="hero__slide is-active" src="src/assets/img/hero-escritorio-vista.jpg" alt="" aria-hidden="true" fetchpriority="high"
+      data-title="Transforme seu espaço"
+      data-desc="Reformas residenciais e corporativas que unem arquitetura, funcionalidade e sofisticação para criar ambientes únicos, pensados em cada detalhe.">
+    <img class="hero__slide" src="src/assets/img/hero-cozinha-adega.jpg" alt="" aria-hidden="true" loading="lazy"
+      data-title="Projetos sob medida."
+      data-desc="Criamos soluções exclusivas para residências e escritórios, planejadas em cada detalhe para traduzir suas necessidades em um projeto único."
+      data-align="right">
+    <img class="hero__slide" src="src/assets/img/hero-lounge-copa.jpg" alt="" aria-hidden="true" loading="lazy"
+      data-title="Planejamento e Gerenciamento"
+      data-desc="Coordenamos todas as etapas da obra, do planejamento à execução, garantindo organização, eficiência e controle em todo o processo.">
   </div>
   <div class="hero__pattern" aria-hidden="true"></div>
   <div class="hero__mark" data-parallax="0.35" aria-hidden="true">
@@ -72,24 +82,10 @@
   </div>
 
   <div class="hero__inner">
-    <p class="eyebrow reveal">Arquitetura corporativa · São Paulo</p>
-    <h1 class="hero__title">
-      <span class="line"><span>Projetar.</span></span>
-      <span class="line"><span>Executar.</span></span>
-      <span class="line"><span class="ital">Mover.</span></span>
-    </h1>
+    <h1 class="hero__title" id="heroTitle">Transforme seu espaço</h1>
     <div class="hero__aside reveal">
-      <p>Unimos arquitetura, engenharia e gestão em um fluxo único, transparente e confiável — do estudo preliminar à entrega da obra.</p>
-      <a class="btn btn--light" href="#contato" data-audio-unlock>
-        <span>Solicitar proposta</span>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
-      </a>
+      <p id="heroDesc">Reformas residenciais e corporativas que unem arquitetura, funcionalidade e sofisticação para criar ambientes únicos, pensados em cada detalhe.</p>
     </div>
-  </div>
-
-  <div class="hero__scroll" aria-hidden="true">
-    <span>Role</span>
-    <i></i>
   </div>
 </section>
 
@@ -112,7 +108,7 @@
 </div>
 
 <!-- Estúdio -->
-<section class="section studio" id="estudio">
+<section class="section studio" id="sobre">
   <div class="wrap grid-2">
     <div class="studio__media reveal">
       <img src="src/assets/img/ambiente-vaso.jpg" alt="Detalhe de ambiente projetado pela MOVA Arquitetura" loading="lazy">
@@ -122,7 +118,7 @@
     </div>
 
     <div class="studio__text">
-      <p class="eyebrow reveal">01 — Estúdio</p>
+      <p class="eyebrow reveal">02 — Sobre</p>
       <h2 class="h2 reveal">Uma marca nascida da <em>obra</em>, não do discurso.</h2>
       <div class="rich reveal">
         <p>A MOVA Arquitetura nasceu da união entre <strong>Anne Vasconcelos</strong> e <strong>Fernanda Mota</strong>, duas arquitetas formadas dentro do universo corporativo — vivendo diariamente a responsabilidade de transformar espaços em estruturas que apoiam pessoas e negócios.</p>
@@ -187,7 +183,7 @@
   <div class="wrap">
     <header class="sec-head sec-head--split">
       <div>
-        <p class="eyebrow reveal">02 — Serviços</p>
+        <p class="eyebrow reveal">03 — Serviços</p>
         <h2 class="h2 reveal">Do estudo preliminar<br>à chave na mão.</h2>
       </div>
       <p class="sec-head__lead reveal">Atendemos empresas de médio e alto padrão que precisam de espaços eficientes, bonitos e entregues com previsibilidade.</p>
@@ -275,7 +271,7 @@
 <section class="section method" id="metodo">
   <div class="wrap">
     <header class="sec-head">
-      <p class="eyebrow reveal">03 — Método</p>
+      <p class="eyebrow reveal">Método</p>
       <h2 class="h2 reveal">Um caminho previsível,<br>sem ruído.</h2>
     </header>
 
@@ -348,11 +344,22 @@
   </div>
 </section>
 
-<!-- Sócias -->
-<section class="section partners" id="socias">
+<!-- Depoimentos -->
+<section class="section testimonials" id="depoimentos">
   <div class="wrap">
     <header class="sec-head">
-      <p class="eyebrow reveal">05 — Sócias</p>
+      <p class="eyebrow reveal">05 — Depoimentos</p>
+      <h2 class="h2 reveal">O que dizem sobre<br>trabalhar com a MOVA.</h2>
+    </header>
+    <p class="sec-head__lead reveal">Em breve, depoimentos de clientes que já viveram o processo MOVA — do estudo preliminar à entrega.</p>
+  </div>
+</section>
+
+<!-- Equipe -->
+<section class="section partners" id="equipe">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal">06 — Equipe</p>
       <h2 class="h2 reveal">Duas frentes,<br>um mesmo propósito.</h2>
     </header>
 
@@ -385,7 +392,7 @@
   <div class="contact__pattern" aria-hidden="true"></div>
   <div class="wrap grid-2">
     <div class="contact__aside">
-      <p class="eyebrow reveal">06 — Contato</p>
+      <p class="eyebrow reveal">07 — Contato</p>
       <h2 class="h2 reveal">Vamos mover<br>o seu espaço.</h2>
       <p class="contact__lead reveal">Conte o que você precisa. Respondemos em até 1 dia útil com os próximos passos e o formato de proposta mais adequado ao seu projeto.</p>
 
@@ -466,11 +473,12 @@
     <div class="footer__grid">
       <nav aria-label="Rodapé">
         <h4>Navegação</h4>
-        <a href="#estudio">Estúdio</a>
+        <a href="#top">Home</a>
+        <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
-        <a href="#metodo">Método</a>
         <a href="#projetos">Projetos</a>
-        <a href="#socias">Sócias</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#equipe">Equipe</a>
       </nav>
       <div>
         <h4>Contato</h4>
