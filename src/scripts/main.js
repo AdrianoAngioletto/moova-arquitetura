@@ -31,19 +31,27 @@
     var count  = $('#loaderCount');
     if (!loader) return;
 
+    var MIN_VISIBLE = reduced ? 0 : 1700; // tempo do traço do M (1.6s) + folga
+    var start = performance.now();
+
     var n = 0;
     var tick = setInterval(function () {
       n = Math.min(n + Math.ceil(Math.random() * 7), 99);
       if (count) count.textContent = n;
     }, 60);
 
-    function done() {
+    function finish() {
       clearInterval(tick);
       if (count) count.textContent = '100';
       setTimeout(function () {
         loader.classList.add('is-done');
         document.body.classList.remove('is-locked');
       }, reduced ? 0 : 420);
+    }
+
+    function done() {
+      var wait = Math.max(0, MIN_VISIBLE - (performance.now() - start));
+      setTimeout(finish, wait);
     }
 
     document.body.classList.add('is-locked');

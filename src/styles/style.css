@@ -118,7 +118,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
   transition:opacity .7s var(--ease),visibility .7s;
 }
 .loader.is-done{opacity:0;visibility:hidden}
-.loader__mark svg{width:clamp(56px,9vw,104px);height:auto;overflow:visible}
+.loader__mark svg{width:clamp(105px,16.875vw,195px);height:auto;overflow:visible}
 .loader__mark path{
   fill:none;stroke:var(--marfim);stroke-width:8;
   stroke-dasharray:2600;stroke-dashoffset:2600;
@@ -148,7 +148,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
 .header{transition:transform .5s var(--ease),background .5s var(--ease),
         padding .5s var(--ease),border-color .5s var(--ease)}
 .header__logo{display:block;color:var(--marfim)}
-.logo-h{width:clamp(120px,11vw,168px);height:auto}
+.logo-h{width:clamp(104px,8.6vw,138px);height:auto}
 
 .nav__list{display:none}
 @media(min-width:1080px){
@@ -201,7 +201,7 @@ h1,h2,h3,h4,blockquote,p{margin:0}
   .nav__list{display:flex;flex-direction:column;gap:clamp(10px,2.4vw,20px)}
   .nav__list a{
     font-family:var(--ff-title);font-weight:300;
-    font-size:clamp(2rem,10vw,3.4rem);line-height:1.1;letter-spacing:-.02em;
+    font-size:clamp(1.4rem,5.5vw,2.2rem);line-height:1.15;letter-spacing:-.02em;
     display:flex;align-items:baseline;gap:16px;
     opacity:0;transform:translateY(28px);
     transition:opacity .6s var(--ease),transform .6s var(--slow);
@@ -226,6 +226,9 @@ h1,h2,h3,h4,blockquote,p{margin:0}
   padding:140px var(--gut) clamp(48px,7vw,90px);overflow:hidden;
 }
 .hero.is-align-right{justify-content:flex-end}
+@media(max-width:680px){
+  .hero{align-items:flex-end}
+}
 .hero__bg{position:absolute;inset:-6% 0;z-index:0;will-change:transform}
 .hero__slide{
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
@@ -292,6 +295,9 @@ h1,h2,h3,h4,blockquote,p{margin:0}
   font-family:var(--ff-title);font-weight:300;
   font-size:clamp(.55rem,1.2vw,.95rem);letter-spacing:-.015em;white-space:nowrap;
   color:rgba(244,240,234,.72);
+}
+@media(max-width:680px){
+  .marquee span{font-size:clamp(.63rem,1.38vw,1.09rem)}
 }
 .marquee i{color:var(--siena);font-size:.6rem;font-style:normal}
 @keyframes scroll{to{transform:translateX(-50%)}}
