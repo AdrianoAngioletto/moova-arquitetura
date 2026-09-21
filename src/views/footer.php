@@ -49,4 +49,4 @@
   <span class="sound__label">Som</span>
 </button>
 
-<script src="src/scripts/main.js?v=5" defer></script>
+<script src="src/scripts/main.js?v=6" defer></script>

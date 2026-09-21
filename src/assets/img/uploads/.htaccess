@@ -1,0 +1,5 @@
+# Defesa extra: mesmo que alguém consiga enviar um arquivo com extensão errada,
+# nada aqui dentro é executado como script.
+<FilesMatch "\.(php|phtml|php[0-9]|pl|py|cgi|sh)$">
+  Require all denied
+</FilesMatch>

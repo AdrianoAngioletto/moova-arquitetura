@@ -98,6 +98,26 @@ O container roda em `php:8.3-apache` servindo a raiz do projeto (a pasta é mont
 volume, então qualquer edição nos arquivos aparece direto no navegador, sem rebuild). O PHP
 já vem pronto para quando o `backend/contato.php` do formulário de contato for implementado.
 
+## Painel administrativo
+
+Projetos, categorias e o slide da home são editáveis por `/root-mova` (login com conta de
+admin). Os dados ficam em MySQL — o `docker-compose.yml` já sobe um serviço `db` junto com
+o `site`.
+
+- **Mudou o schema** (`db/init/001_schema.sql`)? Ele só roda automaticamente num volume
+  vazio. Pra reaplicar: `docker compose down -v && docker compose up -d --build`.
+- **Primeira conta de admin** (ou recuperar acesso): `docker compose exec site php
+  backend/admin/bin/create_admin.php email nome senha`. Depois disso, novas contas podem
+  ser criadas direto pela tela `/root-mova/users.php`.
+- **Importar dados de um `backend/data/projects.php` antigo**: `docker compose exec site
+  php backend/admin/bin/seed_from_static.php` (só roda se as tabelas estiverem vazias).
+- **Fora do Docker** (ex: Hostinger via SSH), sem variáveis de ambiente disponíveis: crie
+  `backend/config.local.php` (fora do git) retornando `['db_host' => ..., 'db_name' => ...,
+  'db_user' => ..., 'db_pass' => ...]` com as credenciais do MySQL da hospedagem.
+- **Isso não funciona no preview estático em S3** — lá não tem PHP nem banco; o site
+  continua mostrando o conteúdo estático de fallback (slide do hero, projetos daquele
+  momento) até migrar pra uma hospedagem com PHP+MySQL de verdade.
+
 ## Infraestrutura
 
 Toda a hospedagem é descrita em código, em `infra/`. O site vive em um bucket S3 **privado**,

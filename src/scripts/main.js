@@ -100,8 +100,9 @@
     });
   })();
 
-  // Slideshow do hero
-  (function heroSlides() {
+  // Slideshow do hero — roda sobre o que estiver em #heroBg no momento em que é chamada
+  // (os 3 <img> estáticos do index.html, ou os montados por loadHeroFromApi() abaixo).
+  function startHeroSlideshow() {
     var slides = $$('.hero__slide', $('#heroBg'));
     if (slides.length < 2) return;
 
@@ -127,6 +128,62 @@
         if (hero)  hero.classList.toggle('is-align-right', next.dataset.align === 'right');
       }, 450);
     }, 6000);
+  }
+
+  // Busca os slides editáveis pelo painel admin (backend/api/hero.php). Se der certo,
+  // reconstrói #heroBg com o conteúdo do banco antes de iniciar o slideshow; se falhar,
+  // der timeout, ou vier vazio (banco fora do ar, ou o preview estático em S3 sem PHP),
+  // o slideshow roda sobre os 3 <img> estáticos que já vêm no index.html.
+  (function loadHeroFromApi() {
+    var heroBg = $('#heroBg');
+    if (!heroBg || typeof fetch !== 'function') { startHeroSlideshow(); return; }
+
+    var done = false;
+    var timer = setTimeout(function () {
+      if (done) return;
+      done = true;
+      startHeroSlideshow();
+    }, 2500);
+
+    fetch('backend/api/hero.php')
+      .then(function (res) { return res.ok ? res.json() : []; })
+      .then(function (slides) {
+        if (done) return;
+        if (!Array.isArray(slides) || !slides.length) {
+          done = true; clearTimeout(timer); startHeroSlideshow(); return;
+        }
+        done = true; clearTimeout(timer);
+
+        heroBg.innerHTML = '';
+        slides.forEach(function (slide, i) {
+          var img = document.createElement('img');
+          img.className = 'hero__slide' + (i === 0 ? ' is-active' : '');
+          img.src = 'src/assets/img/' + slide.image;
+          img.alt = '';
+          img.setAttribute('aria-hidden', 'true');
+          if (i === 0) img.setAttribute('fetchpriority', 'high');
+          else img.loading = 'lazy';
+          img.dataset.title = slide.title || '';
+          img.dataset.desc = slide.description || '';
+          if (slide.align === 'right') img.dataset.align = 'right';
+          heroBg.appendChild(img);
+        });
+
+        var hero  = $('.hero');
+        var title = $('#heroTitle');
+        var desc  = $('#heroDesc');
+        var first = slides[0];
+        if (title && first.title) title.textContent = first.title;
+        if (desc  && first.description) desc.textContent = first.description;
+        if (hero) hero.classList.toggle('is-align-right', first.align === 'right');
+
+        startHeroSlideshow();
+      })
+      .catch(function () {
+        if (done) return;
+        done = true; clearTimeout(timer);
+        startHeroSlideshow();
+      });
   })();
 
   (function reveal() {

@@ -1,0 +1,100 @@
+/* Painel administrativo — utilitário, não segue a identidade visual do site público. */
+
+:root{
+  --bg:#f4f5f7; --surface:#fff; --border:#dde1e6; --text:#1c2024; --muted:#6b7280;
+  --acc:#b66d48; --acc-dark:#8c421f; --danger:#c0392b; --radius:10px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  font-size:16px;line-height:1.5;
+}
+a{color:var(--acc-dark)}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+
+/* Topbar */
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 16px;background:var(--surface);border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:10;
+}
+.topbar h1{font-size:1.05rem;margin:0}
+.topbar nav{display:flex;gap:14px;font-size:.9rem}
+
+/* Botões — sempre com alvo de toque confortável */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:48px;padding:10px 18px;border-radius:var(--radius);
+  border:1px solid var(--border);background:var(--surface);color:var(--text);
+  font-size:1rem;font-weight:500;text-decoration:none;cursor:pointer;width:100%;
+}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn-danger{background:#fff;border-color:var(--danger);color:var(--danger)}
+.btn-ghost{background:transparent;border-color:transparent}
+.btn-row{display:flex;gap:10px}
+.btn-row .btn{width:auto;flex:1}
+
+/* Cards */
+.card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
+  padding:16px;margin-bottom:14px;
+}
+.card-list{display:flex;flex-direction:column;gap:12px;margin:16px 0}
+.item-card{display:flex;gap:12px;align-items:center;scroll-margin-top:72px}
+.item-card img{width:64px;height:64px;object-fit:cover;border-radius:8px;flex:none;background:#eee}
+.item-card__info{flex:1;min-width:0}
+.item-card__info strong{display:block;font-size:1rem}
+.item-card__info span{display:block;color:var(--muted);font-size:.85rem}
+.item-card__actions{display:flex;gap:8px}
+.item-card__actions .btn{width:auto;padding:8px 14px;min-height:40px}
+
+/* Formulários — um campo por linha, rótulo em cima */
+form.stack{display:flex;flex-direction:column;gap:16px}
+.field label{display:block;font-weight:600;margin-bottom:6px;font-size:.92rem}
+.field input[type=text],
+.field input[type=email],
+.field input[type=password],
+.field input[type=number],
+.field select,
+.field textarea{
+  width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius);
+  font-size:1rem;font-family:inherit;background:#fff;color:var(--text);
+}
+.field textarea{min-height:100px;resize:vertical}
+.field small{display:block;color:var(--muted);margin-top:4px;font-size:.8rem}
+.field input[type=file]{width:100%;padding:10px 0}
+.field input[type=checkbox]{width:20px;height:20px;vertical-align:middle;margin-right:8px}
+
+.thumb-list{display:flex;flex-direction:column;gap:10px;margin:10px 0}
+.thumb-row{display:flex;align-items:center;gap:10px;border:1px solid var(--border);border-radius:8px;padding:8px;scroll-margin-top:72px}
+.thumb-row img{width:56px;height:56px;object-fit:cover;border-radius:6px;flex:none}
+.thumb-row input[type=text]{flex:1}
+.thumb-row .order{width:56px;flex:none}
+
+/* Mensagens */
+.flash{
+  background:#e8f5e9;border:1px solid #a5d6a7;color:#256029;
+  padding:12px 14px;border-radius:var(--radius);margin-bottom:16px;font-size:.92rem;
+}
+.error{
+  background:#fdecea;border:1px solid #f5c2be;color:var(--danger);
+  padding:12px 14px;border-radius:var(--radius);margin-bottom:16px;font-size:.92rem;
+}
+
+.empty{color:var(--muted);text-align:center;padding:24px 0}
+.section-title{display:flex;align-items:center;justify-content:space-between;margin:24px 0 4px}
+.section-title h2{font-size:1rem;margin:0}
+.badge{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border-radius:20px;background:#eee;color:var(--muted)}
+.badge.is-draft{background:#fff3cd;color:#8a6d1a}
+
+/* Tela de login */
+.login-wrap{max-width:360px;margin:15vh auto 0;padding:0 16px}
+.login-wrap h1{font-size:1.3rem;text-align:center;margin-bottom:24px}
+
+/* Só ganha um pouco mais de respiro em telas largas — continua a mesma coluna única */
+@media(min-width:700px){
+  .wrap{padding:24px}
+  .item-card__actions .btn{padding:8px 18px}
+}

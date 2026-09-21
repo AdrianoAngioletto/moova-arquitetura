@@ -7,6 +7,10 @@ RewriteEngine On
 # Não mexe nos scripts do backend (endpoint do formulário, recebe POST)
 RewriteRule ^backend/ - [L]
 
+# O painel admin (root-mova/) usa a mesma regra de URL limpa das linhas abaixo —
+# todos os links/formulários dele já apontam pra URL sem .php, então o POST nunca
+# bate na regra de redirect.
+
 # /projetos.php acessado direto -> redireciona pra URL limpa (preserva querystring)
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]

@@ -5,3 +5,32 @@ services:
       - "8080:80"
     volumes:
       - .:/var/www/html
+    environment:
+      DB_HOST: db
+      DB_NAME: mova
+      DB_USER: mova
+      DB_PASS: mova_dev
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: mova_root_dev
+      MYSQL_DATABASE: mova
+      MYSQL_USER: mova
+      MYSQL_PASSWORD: mova_dev
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pmova_root_dev"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 30s
+
+volumes:
+  db_data:

@@ -5,3 +5,4 @@ Smash
 README.md
 *.md
 .DS_Store
+backend/config.local.php

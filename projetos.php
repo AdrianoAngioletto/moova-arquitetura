@@ -1,5 +1,6 @@
 <?php
-$projects = require __DIR__ . '/backend/data/projects.php';
+require __DIR__ . '/backend/lib/projects_repo.php';
+$projects = get_projects();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -20,7 +21,7 @@ $projects = require __DIR__ . '/backend/data/projects.php';
 <link rel="icon" href="src/assets/logo/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="src/assets/fonts/Ranade-Light.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="src/assets/fonts/Chillax-Light.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="src/styles/style.css?v=5">
+<link rel="stylesheet" href="src/styles/style.css?v=6">
 </head>
 <body>
 

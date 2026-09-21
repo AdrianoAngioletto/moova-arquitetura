@@ -1,11 +1,8 @@
 <?php
-$projects = require __DIR__ . '/backend/data/projects.php';
+require __DIR__ . '/backend/lib/projects_repo.php';
 
 $slug = isset($_SERVER['QUERY_STRING']) ? urldecode($_SERVER['QUERY_STRING']) : '';
-$project = null;
-foreach ($projects as $p) {
-  if ($p['slug'] === $slug) { $project = $p; break; }
-}
+$project = get_project_by_slug($slug);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -25,7 +22,7 @@ foreach ($projects as $p) {
 <link rel="icon" href="src/assets/logo/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="src/assets/fonts/Ranade-Light.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="src/assets/fonts/Chillax-Light.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="src/styles/style.css?v=5">
+<link rel="stylesheet" href="src/styles/style.css?v=6">
 </head>
 <body>
 
