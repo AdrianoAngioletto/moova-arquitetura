@@ -548,13 +548,12 @@ h1,h2,h3,h4,blockquote,p{margin:0}
 .partners__grid{display:grid;gap:clamp(32px,4vw,56px)}
 @media(min-width:820px){.partners__grid{grid-template-columns:1fr 1fr}}
 .partner{border-top:1px solid var(--bd);padding-top:clamp(24px,3vw,36px)}
-.partner__img{aspect-ratio:10/9;overflow:hidden;margin-bottom:clamp(22px,3vw,32px)}
+.partner__img{aspect-ratio:10/9;overflow:hidden;margin-bottom:clamp(22px,3vw,32px);background:var(--carvao)}
 .partner__img img{
   width:100%;height:100%;object-fit:cover;filter:grayscale(.3);
   transition:transform 1.3s var(--slow);
 }
 .partner:hover .partner__img img{transform:scale(1.05)}
-.partner:first-child .partner__img img,
 .partner:last-child .partner__img img{object-position:50% 30%}
 .partner h3{
   font-family:var(--ff-title);font-weight:300;
@@ -625,22 +624,22 @@ h1,h2,h3,h4,blockquote,p{margin:0}
 .form.is-sending{opacity:.55;pointer-events:none}
 
 /* Footer */
-.footer{background:var(--carvao);border-top:1px solid var(--bd);padding-top:clamp(56px,7vw,96px)}
+.footer{background:var(--carvao);border-top:1px solid var(--bd);padding-top:clamp(28px,3.5vw,48px)}
 .footer__top{
-  display:grid;gap:32px;align-items:center;
-  padding-bottom:clamp(44px,6vw,72px);border-bottom:1px solid var(--bd);
+  display:grid;gap:16px;align-items:center;
+  padding-bottom:clamp(22px,3vw,36px);border-bottom:1px solid var(--bd);
 }
-@media(min-width:820px){.footer__top{grid-template-columns:auto 1fr;gap:clamp(40px,7vw,90px)}}
-.footer__logo{width:clamp(150px,18vw,240px);height:auto;color:var(--marfim);flex:none}
+@media(min-width:820px){.footer__top{grid-template-columns:auto 1fr;gap:clamp(20px,3.5vw,45px)}}
+.footer__logo{width:clamp(78.75px,9.45vw,126px);height:auto;color:var(--marfim);flex:none}
 .footer__claim{
   font-family:var(--ff-title);font-weight:300;
-  font-size:clamp(1.5rem,4vw,2.8rem);line-height:1.1;letter-spacing:-.03em;
+  font-size:clamp(1.125rem,3vw,2.1rem);line-height:1.1;letter-spacing:-.03em;
   color:rgba(244,240,234,.85);
 }
 .footer__claim em{font-style:italic;color:var(--siena)}
 .footer__grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:clamp(28px,4vw,48px);padding-block:clamp(40px,5vw,64px);
+  gap:clamp(14px,2vw,24px);padding-block:clamp(20px,2.5vw,32px);
 }
 .footer__grid h4{
   font-size:.66rem;font-weight:500;text-transform:uppercase;letter-spacing:.2em;
