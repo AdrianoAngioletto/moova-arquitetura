@@ -65,10 +65,11 @@
     var el = $('#header');
     if (!el) return;
     var last = 0;
+    var canAutoHide = !!$('.hero');
 
     onScroll(function (y) {
       el.classList.toggle('is-stuck', y > 40);
-      el.classList.toggle('is-hidden', y > 420 && y > last && !$('#nav').classList.contains('is-open'));
+      el.classList.toggle('is-hidden', canAutoHide && y > 420 && y > last && !$('#nav').classList.contains('is-open'));
       last = y;
     });
   })();
@@ -429,6 +430,17 @@
     var btns  = $$('.proj-filter__btn', bar);
     var cards = $$('.proj-card', grid);
     var activeFilter = 'all';
+    var wrap = bar.closest('.proj-filter-wrap');
+
+    function updateScrollHint() {
+      if (!wrap) return;
+      var canScroll = bar.scrollWidth > bar.clientWidth + 2;
+      var atEnd = bar.scrollLeft + bar.clientWidth >= bar.scrollWidth - 2;
+      wrap.classList.toggle('has-scroll', canScroll && !atEnd);
+    }
+    updateScrollHint();
+    bar.addEventListener('scroll', updateScrollHint);
+    window.addEventListener('resize', updateScrollHint);
 
     function apply() {
       var term = search ? search.value.trim().toLowerCase() : '';

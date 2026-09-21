@@ -25,7 +25,7 @@ foreach ($projects as $p) {
 <link rel="icon" href="src/assets/logo/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="src/assets/fonts/Ranade-Light.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="src/assets/fonts/Chillax-Light.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="src/styles/style.css">
+<link rel="stylesheet" href="src/styles/style.css?v=5">
 </head>
 <body>
 

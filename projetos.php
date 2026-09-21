@@ -20,7 +20,7 @@ $projects = require __DIR__ . '/backend/data/projects.php';
 <link rel="icon" href="src/assets/logo/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="src/assets/fonts/Ranade-Light.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="src/assets/fonts/Chillax-Light.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="src/styles/style.css">
+<link rel="stylesheet" href="src/styles/style.css?v=5">
 </head>
 <body>
 
@@ -36,11 +36,16 @@ $projects = require __DIR__ . '/backend/data/projects.php';
     </header>
 
     <div class="proj-toolbar reveal">
-      <div class="proj-filter" id="projFilter" role="tablist" aria-label="Filtrar projetos">
-        <button class="proj-filter__btn is-active" type="button" data-filter="all">Todos</button>
-        <button class="proj-filter__btn" type="button" data-filter="corporativo">Corporativo</button>
-        <button class="proj-filter__btn" type="button" data-filter="residencial">Residencial</button>
-        <button class="proj-filter__btn" type="button" data-filter="studio">Studios</button>
+      <div class="proj-filter-wrap">
+        <div class="proj-filter" id="projFilter" role="tablist" aria-label="Filtrar projetos">
+          <button class="proj-filter__btn is-active" type="button" data-filter="all">Todos</button>
+          <button class="proj-filter__btn" type="button" data-filter="corporativo">Corporativo</button>
+          <button class="proj-filter__btn" type="button" data-filter="residencial">Residencial</button>
+          <button class="proj-filter__btn" type="button" data-filter="studio">Studios</button>
+        </div>
+        <span class="proj-filter__hint" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+        </span>
       </div>
       <div class="proj-search">
         <input type="search" id="projSearch" placeholder="Buscar" aria-label="Buscar">
