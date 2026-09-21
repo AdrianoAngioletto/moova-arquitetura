@@ -1,78 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Projetos — MOVA Arquitetura</title>
-<meta name="description" content="Portfólio completo de projetos da MOVA Arquitetura — arquitetura corporativa de alto padrão.">
-<meta name="theme-color" content="#0E0E0F">
-<meta name="robots" content="noindex, nofollow">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Projetos — MOVA Arquitetura">
-<meta property="og:description" content="Portfólio completo de projetos da MOVA Arquitetura.">
-<meta property="og:image" content="src/assets/img/colunas-escala.jpg">
-<meta property="og:locale" content="pt_BR">
-
-<link rel="icon" href="src/assets/logo/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="src/assets/fonts/Ranade-Light.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="src/assets/fonts/Chillax-Light.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="src/styles/style.css">
-</head>
-<body>
-
-<!-- Preloader -->
-<div class="loader" id="loader" aria-hidden="true">
-  <div class="loader__mark">
-    <svg viewBox="0 0 662 522" aria-hidden="true">
-      <path d="M240.818 515.445C308.984 357.77 377.107 200.218 445.176 42.467H490.591L616 333.111H656L514.841 6H421.175L216.831 478.978H171.401L46 188.334H6L147.151 515.445Z"/>
-    </svg>
-  </div>
-  <span class="loader__count" id="loaderCount">0</span>
-</div>
-
-<!-- Header -->
-<header class="header" id="header">
-  <a class="header__logo" href="index.html" aria-label="MOVA Arquitetura — início">
-    <img class="logo-h" src="src/assets/logo/mova-lettermark-novo.png" alt="MOVA Arquitetura">
-  </a>
-
-  <nav class="nav" id="nav" aria-label="Navegação principal">
-    <ul class="nav__list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#sobre">Sobre</a></li>
-      <li><a href="index.html#servicos">Serviços</a></li>
-      <li><a href="projetos.html">Projetos</a></li>
-      <li><a href="index.html#depoimentos">Depoimentos</a></li>
-      <li><a href="index.html#equipe">Equipe</a></li>
-      <li><a href="index.html#contato">Contato</a></li>
-    </ul>
-    <div class="nav__foot">
-      <a href="https://instagram.com/mo.voarq" target="_blank" rel="noopener">@mo.voarq</a>
-      <a href="mailto:contato@movaarq.com.br">contato@movaarq.com.br</a>
-    </div>
-  </nav>
-
-  <a class="header__cta" href="index.html#contato" data-audio-unlock>Iniciar projeto</a>
-
-  <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
-    <span></span><span></span>
-  </button>
-</header>
-
-<main id="top">
-
-<!-- Projetos -->
-<section class="section projects-page">
-  <div class="wrap">
-    <header class="sec-head">
-      <p class="eyebrow reveal">Projetos</p>
-      <h2 class="h2 reveal">Portfólio completo,<br>em construção.</h2>
-      <p class="sec-head__lead reveal">Estamos organizando aqui a seleção completa de projetos da MOVA. Enquanto isso, veja alguns destaques na <a class="link" href="index.html#projetos">página inicial</a>.</p>
-    </header>
-  </div>
-</section>
-
 </main>
 
 <!-- Footer -->
@@ -89,27 +14,23 @@
         <a href="index.html">Home</a>
         <a href="index.html#sobre">Sobre</a>
         <a href="index.html#servicos">Serviços</a>
-        <a href="projetos.html">Projetos</a>
+        <a href="projetos.php">Projetos</a>
         <a href="index.html#depoimentos">Depoimentos</a>
         <a href="index.html#equipe">Equipe</a>
       </nav>
       <div>
         <h4>Contato</h4>
         <a href="mailto:contato@movaarq.com.br">contato@movaarq.com.br</a>
-        <a href="https://wa.me/5511983419654?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20MOVA%20Arquitetura%20e%20gostaria%20de%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">(11) 98341-9654</a>
-        <a href="https://wa.me/5511950302970?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20MOVA%20Arquitetura%20e%20gostaria%20de%20falar%20sobre%20um%20projeto." target="_blank" rel="noopener">(11) 95030-2970</a>
       </div>
       <div>
         <h4>Social</h4>
         <a href="https://instagram.com/mo.voarq" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://instagram.com/movaarq.gestao" target="_blank" rel="noopener">Instagram · Gestão</a>
         <a href="https://wa.me/5511983419654" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
 
     <div class="footer__bar">
       <span>© <span id="year">2026</span> MOVA Arquitetura. Todos os direitos reservados.</span>
-      <span>CAU A1739921</span>
     </div>
   </div>
 </footer>
@@ -129,5 +50,3 @@
 </button>
 
 <script src="src/scripts/main.js" defer></script>
-</body>
-</html>

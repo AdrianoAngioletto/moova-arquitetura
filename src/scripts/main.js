@@ -419,4 +419,37 @@
     if (el) el.textContent = new Date().getFullYear();
   })();
 
+  // Filtro + busca da página de projetos
+  (function projFilter() {
+    var bar    = $('#projFilter');
+    var grid   = $('#projGrid');
+    var search = $('#projSearch');
+    if (!bar || !grid) return;
+
+    var btns  = $$('.proj-filter__btn', bar);
+    var cards = $$('.proj-card', grid);
+    var activeFilter = 'all';
+
+    function apply() {
+      var term = search ? search.value.trim().toLowerCase() : '';
+      cards.forEach(function (card) {
+        var matchesCategory = activeFilter === 'all' || card.dataset.category === activeFilter;
+        var name = (card.querySelector('b') || {}).textContent || '';
+        var matchesSearch = !term || name.toLowerCase().indexOf(term) !== -1;
+        card.hidden = !(matchesCategory && matchesSearch);
+      });
+    }
+
+    bar.addEventListener('click', function (e) {
+      var btn = e.target.closest ? e.target.closest('.proj-filter__btn') : null;
+      if (!btn) return;
+
+      activeFilter = btn.dataset.filter;
+      btns.forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+      apply();
+    });
+
+    if (search) search.addEventListener('input', apply);
+  })();
+
 })();
