@@ -1,7 +1,7 @@
 <?php
 $projects = require __DIR__ . '/backend/data/projects.php';
 
-$slug = isset($_GET['slug']) ? (string) $_GET['slug'] : '';
+$slug = isset($_SERVER['QUERY_STRING']) ? urldecode($_SERVER['QUERY_STRING']) : '';
 $project = null;
 foreach ($projects as $p) {
   if ($p['slug'] === $slug) { $project = $p; break; }
@@ -34,12 +34,9 @@ foreach ($projects as $p) {
 <?php if ($project): ?>
 <!-- Projeto -->
 <section class="section proj-detail">
-  <div class="proj-detail__hero reveal">
-    <img src="src/assets/img/<?= htmlspecialchars($project['cover']) ?>" alt="<?= htmlspecialchars($project['images'][0]['alt'] ?? $project['title']) ?>" fetchpriority="high">
-  </div>
   <div class="wrap">
     <header class="sec-head">
-      <p class="eyebrow reveal"><a class="link" href="projetos.php">Projetos</a> — <?= htmlspecialchars($project['category_label']) ?></p>
+      <p class="eyebrow reveal"><a class="link" href="projetos">Projetos</a> — <?= htmlspecialchars($project['category_label']) ?></p>
       <h2 class="h2 reveal"><?= htmlspecialchars($project['title']) ?></h2>
       <p class="sec-head__lead reveal"><?= htmlspecialchars($project['summary']) ?></p>
     </header>
@@ -60,7 +57,7 @@ foreach ($projects as $p) {
     <header class="sec-head">
       <p class="eyebrow reveal">Projetos</p>
       <h2 class="h2 reveal">Projeto não encontrado.</h2>
-      <p class="sec-head__lead reveal">Esse projeto não existe ou foi removido. <a class="link" href="projetos.php">Volte para a lista de projetos</a>.</p>
+      <p class="sec-head__lead reveal">Esse projeto não existe ou foi removido. <a class="link" href="projetos">Volte para a lista de projetos</a>.</p>
     </header>
   </div>
 </section>

@@ -14,7 +14,7 @@
         <a href="index.html">Home</a>
         <a href="index.html#sobre">Sobre</a>
         <a href="index.html#servicos">Serviços</a>
-        <a href="projetos.php">Projetos</a>
+        <a href="projetos">Projetos</a>
         <a href="index.html#depoimentos">Depoimentos</a>
         <a href="index.html#equipe">Equipe</a>
       </nav>

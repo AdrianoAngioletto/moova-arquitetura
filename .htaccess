@@ -1,0 +1,17 @@
+# Esconde a extensão .php nas URLs públicas (projetos, projeto).
+# Só funciona em hospedagem Apache com mod_rewrite + AllowOverride All.
+# Não tem efeito no preview em S3 (hosting estático não lê .htaccess).
+
+RewriteEngine On
+
+# Não mexe nos scripts do backend (endpoint do formulário, recebe POST)
+RewriteRule ^backend/ - [L]
+
+# /projetos.php acessado direto -> redireciona pra URL limpa (preserva querystring)
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# /projetos -> serve projetos.php por baixo dos panos, sem mudar a URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.+)$ $1.php [L]

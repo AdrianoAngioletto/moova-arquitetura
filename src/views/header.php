@@ -19,7 +19,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#sobre">Sobre</a></li>
       <li><a href="index.html#servicos">Serviços</a></li>
-      <li><a href="projetos.php">Projetos</a></li>
+      <li><a href="projetos">Projetos</a></li>
       <li><a href="index.html#depoimentos">Depoimentos</a></li>
       <li><a href="index.html#equipe">Equipe</a></li>
       <li><a href="index.html#contato">Contato</a></li>

@@ -43,7 +43,7 @@ $projects = require __DIR__ . '/backend/data/projects.php';
         <button class="proj-filter__btn" type="button" data-filter="studio">Studios</button>
       </div>
       <div class="proj-search">
-        <input type="search" id="projSearch" placeholder="Buscar pelo nome da empresa" aria-label="Buscar projeto pelo nome da empresa">
+        <input type="search" id="projSearch" placeholder="Buscar" aria-label="Buscar">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
       </div>
     </div>
@@ -51,7 +51,7 @@ $projects = require __DIR__ . '/backend/data/projects.php';
     <div class="proj-grid" id="projGrid">
       <?php foreach ($projects as $p): ?>
       <figure class="proj-card reveal" data-category="<?= htmlspecialchars($p['category']) ?>">
-        <a href="projeto.php?slug=<?= urlencode($p['slug']) ?>">
+        <a href="projeto?<?= urlencode($p['slug']) ?>">
           <img src="src/assets/img/<?= htmlspecialchars($p['cover']) ?>" alt="<?= htmlspecialchars($p['images'][0]['alt'] ?? $p['title']) ?>" loading="lazy">
           <figcaption><span><?= htmlspecialchars($p['category_label']) ?></span><b><?= htmlspecialchars($p['title']) ?></b></figcaption>
         </a>
